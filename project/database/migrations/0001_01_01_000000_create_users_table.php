@@ -13,14 +13,41 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+
+            // User details
+            $table->string('first_name');
+            $table->string('middle_name');
+            $table->string('last_name');
+            $table->string('suffix');
+            $table->string('user_name');
+            $table->string('password');
+
+
+            // Contact Information
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
+            $table->string('contact_number');
+
+            // Address
+            $table->string('house_number');
+            $table->string('street');
+            $table->string('barangay');
+            $table->string('city_municipality');
+            $table->string('province');
+            $table->string('region');
+            $table->string('postal_code');
+            $table->string('country');
+
+            // Others
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('branch');
+
+
+            $table->rememberToken();
             $table->timestamps();
+            // $table->foreignId('current_team_id')->nullable();
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
