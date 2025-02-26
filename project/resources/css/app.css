@@ -8,17 +8,17 @@
 
 :root {
     /* Colors */
-    --color-primary: #317f5d;
-    --color-secondary: #916950;
-    --color-highlight: #48B886;
-    --color-accent: #B59771;
-    --color-light: #EBD7A5;
-    --color-dark: #000000;
+    --color-primary: #166534;
+    --color-secondary: #8B5E3C;
+    --color-highlight: #6BA17E;
+    --color-accent: #A88E74;
+    --color-light: #E6D5B8;
+    --color-dark: #1E1E1E;
 
     /* Font Styles */
-    --font-heading: "Paytone One", sans-serif;
+    --font-heading: "Poppins", sans-serif;
     --font-body: "Poppins", sans-serif;
-    --font-subheader: "Poppins", sans-serif;
+    --font-subheader: "Poppins Bold", sans-serif;
 }
 
 /* Font Styles */
@@ -32,7 +32,7 @@ body {
 
 .subheader {
     font-family: var(--font-subheader);
-    font-weight: 700;
+    /* font-weight: 700; */
 }
 
 /* Text Colors */
@@ -83,4 +83,45 @@ body {
 
 .bg-dark {
     background-color: var(--color-dark);
+}
+
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.125rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    background-color: #16a34a;
+    color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #15803d;
+    /* transform: scale(1.05); */
+}
+
+
+/* NavBar */
+
+.hoverlist>* {
+    @apply hover:bg-gray-100 rounded-md transition duration-150;
+}
+
+.hoverlist>*>a {
+    @apply flex items-center p-2;
+}
+
+.highlight {
+    @apply !bg-indigo-100;
+}
+
+.nav-items>li>a {
+    @apply p-4 hover:bg-green-700 rounded-lg
 }

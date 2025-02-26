@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <div class="flex h-screen items-center justify-center bg-primary">
+    <div class="flex h-screen items-center justify-center bg-green-800 bg-opacity-90">
         <div class="flex w-[800px] shadow-lg rounded-lg overflow-hidden bg-white">
 
             <!-- Left Section -->
@@ -47,12 +47,12 @@
 
                     <div class="flex items-center justify-between mt-4">
                         @if (Route::has('password.request'))
-                            <a class="text-sm text-primary hover:underline" href="{{ route('password.request') }}">
+                            <a class="text-sm text-bold text-primary hover:underline" href="{{ route('password.request') }}">
                                 {{ __('Forgot your password?') }}
                             </a>
                         @endif
 
-                        <x-button class="bg-primary hover:bg-green-700 text-white font-bold py-2 px-6 rounded-full">
+                        <x-button class="bg-green-800 bg-opacity-85 hover:bg-green-800 hover:scale-110 transition-transform duration-300 text-white font-bold py-2 px-6 rounded-full">
                             {{ __('Log in') }}
                         </x-button>
                     </div>
