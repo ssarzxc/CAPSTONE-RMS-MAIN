@@ -5,3 +5,82 @@
 [x-cloak] {
     display: none;
 }
+
+:root {
+    /* Colors */
+    --color-primary: #317f5d;
+    --color-secondary: #916950;
+    --color-highlight: #48B886;
+    --color-accent: #B59771;
+    --color-light: #EBD7A5;
+    --color-dark: #000000;
+
+    /* Font Styles */
+    --font-heading: "Paytone One", sans-serif;
+    --font-body: "Poppins", sans-serif;
+    --font-subheader: "Poppins", sans-serif;
+}
+
+/* Font Styles */
+h1 {
+    font-family: var(--font-heading);
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+.subheader {
+    font-family: var(--font-subheader);
+    font-weight: 700;
+}
+
+/* Text Colors */
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-highlight {
+    color: var(--color-highlight);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-light {
+    color: var(--color-light);
+}
+
+.text-dark {
+    color: var(--color-dark);
+}
+
+/* Background Colors */
+.bg-primary {
+    background-color: var(--color-primary);
+}
+
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+
+.bg-highlight {
+    background-color: var(--color-highlight);
+}
+
+.bg-accent {
+    background-color: var(--color-accent);
+}
+
+.bg-light {
+    background-color: var(--color-light);
+}
+
+.bg-dark {
+    background-color: var(--color-dark);
+}
