@@ -5,11 +5,13 @@ use App\Http\Controllers\LoginController;
 use App\View\Components\GuestLayout;
 // use App\View\Components\GuestLayout;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/debug', [UserController::class, 'index'])->name('user.view');
 
 Route::middleware([
     'auth:sanctum',
@@ -29,3 +31,4 @@ Route::group(['prefix' => 'guest'], function(){
         return view('auth.guests.guest-register');
     })->name('auth.guests.register');
 });
+

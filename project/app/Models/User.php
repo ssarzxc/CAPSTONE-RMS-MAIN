@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\UserRole;
 
 class User extends Authenticatable
 {
@@ -27,12 +28,32 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'first_name',
-        'middle_name', 
+        'middle_name',
         'last_name',
-        'email',
+        'suffix',
+        'user_name',
         'password',
+        'email',
+        'email_verified_at',
+        'contact_number',
+        'house_number',
+        'street',
+        'barangay',
+        'city_municipality',
+        'province',
+        'region',
+        'postal_code',
+        'country',
         'status',
+        'profile_photo_path',
+        'branch',
+        'role_id',
     ];
+
+    public function role()
+    {
+        return $this->belongsTo(UserRole::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -67,4 +88,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    
 }
