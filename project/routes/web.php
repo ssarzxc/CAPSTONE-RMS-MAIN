@@ -26,9 +26,14 @@ Route::middleware([
 //Jetstream Login for Employees
 Route::get('/', [LoginController::class, 'index'])->name('welcome'); 
 
+//Guests
 Route::group(['prefix' => 'guest'], function(){
     Route::get('/register', function(){
         return view('auth.guests.guest-register');
     })->name('auth.guests.register');
+
+    Route::get('/login', function(){
+        return view('auth.guests.guest-login');
+    })->name('auth.guests.login');
 });
 

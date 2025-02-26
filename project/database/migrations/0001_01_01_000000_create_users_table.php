@@ -16,11 +16,11 @@ return new class extends Migration
 
             // User details
             $table->string('first_name');
-            $table->string('middle_name');
-            $table->string('last_name');
-            $table->string('suffix');
-            $table->string('user_name');
-            $table->string('password');
+            $table->string('middle_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('suffix')->nullable();
+            $table->string('user_name')->nullable();
+            $table->string('password')->nullable();
 
 
             // Contact Information

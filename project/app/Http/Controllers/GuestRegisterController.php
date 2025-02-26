@@ -9,7 +9,7 @@ class GuestRegisterController extends Controller
 {
     public function index(){
         if(Auth::guest()){
-            return view('admin.guest-register');
+            return view('auth.guests.login');
         } else {
             return view('welcome');
         }
