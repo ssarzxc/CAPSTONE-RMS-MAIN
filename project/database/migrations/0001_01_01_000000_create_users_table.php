@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->string('suffix')->nullable();
             $table->string('user_name')->nullable();
-            $table->string('password')->nullable();
+            $table->string('password');
 
 
             // Contact Information

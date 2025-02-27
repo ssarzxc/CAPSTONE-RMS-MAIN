@@ -41,10 +41,11 @@ return [
             'provider' => 'users',
         ],
 
-        // 'guest' => [
-        //     'driver' => 'session',
-        //     'provider' => 'guests',
-        // ]
+        //new guard for guest
+        'guest' => [
+            'driver' => 'session',
+            'provider' => 'guests',
+        ]
     ],
 
     
@@ -72,10 +73,11 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'guests' =>[
-        //     'driver' => 'eloquent',
-        //     'model' => env('AUTH_MODEL', App\Models\Guest::class),
-        // ],
+        //new provider for guest
+        'guests' =>[
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Guest::class),
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
