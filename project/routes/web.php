@@ -22,7 +22,7 @@ Route::get('/home', function () {
 
 Route::get('/test', function () {
     return view('st-admin.dashboard');
-});
+})->name('test-dashboard');
 
 Route::get('/reservations', function () {
     return view('st-admin.new-reservations-view');

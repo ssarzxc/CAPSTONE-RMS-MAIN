@@ -44,7 +44,7 @@
         <nav class="hidden md:flex items-center space-x-6">
             <ul class="flex items-center nav-items space-x-4">
                 <li><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                <li><a href="{{route('test-dashboard')}}">Dashboard</a></li>
                 <li><a href="{{route('reservations')}}">Reservations</a></li>
                 <li><a href="{{route('rooms')}}">Rooms</a></li>
                 <li><a href="{{route('settings')}}">Settings</a></li>
