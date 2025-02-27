@@ -1,4 +1,4 @@
-<footer class="bg-green-800 text-white text-center py-3">
+<footer class="bg-green-800 text-white text-center py-3 w-full mt-auto">
     <div class="container mx-auto flex flex-col items-center">
         <div class="flex space-x-3 mb-2">
             <a href="https://www.facebook.com/thecanopyfarmph" class="text-white hover:text-gray-200">

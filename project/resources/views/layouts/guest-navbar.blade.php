@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NavBar</title>
+    <title></title>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -14,9 +14,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
 
 </head>
 
@@ -43,13 +43,15 @@
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-6">
             <ul class="flex items-center nav-items space-x-4">
-                <li><a href="">Home</a></li>
-                <li><a href="">Rooms</a></li>
-                <li><a href="">Event Halls</a></li>
-                <li x-data="{ dropdownOpen: false }" class="relative">
+                <li><a href="{{route('home')}}">Home</a></li>
+                <li><a href="{{route('dashboard')}}">Dashboard</a></li>
+                <li><a href="{{route('reservations')}}">Reservations</a></li>
+                <li><a href="{{route('rooms')}}">Rooms</a></li>
+                <li><a href="{{route('settings')}}">Settings</a></li>
+                {{-- <li x-data="{ dropdownOpen: false }" class="relative">
                     <a @click="dropdownOpen =! dropdownOpen" @click.away="dropdownOpen = false"
                         class="flex items-center gap-2 cursor-pointer select-none">
-                        {{-- <i class="fa-solid fa-circle-user text-xl text-white"></i> --}}
+                        {{-- <i class="fa-solid fa-circle-user text-xl text-white"></i>
                         Contact Us
                         <i x-bind:class="dropdownOpen ? 'rotate-180 duration-300' : ''"
                             class="fa-solid fa-chevron-down w-4"></i>
@@ -64,7 +66,7 @@
                             <li><a href="" class="block px-4 py-2 hover:bg-gray-100">Feedback Form</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> --}}
             </ul>
         </nav>
 
@@ -91,9 +93,10 @@
         </div>
     </header>
 
-
     @yield('content')
+
     @include('layouts.guest-footer')
+
 </body>
 
 </html>

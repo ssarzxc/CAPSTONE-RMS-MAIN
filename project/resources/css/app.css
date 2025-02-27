@@ -18,7 +18,7 @@
     /* Font Styles */
     --font-heading: "Poppins", sans-serif;
     --font-body: "Poppins", sans-serif;
-    --font-subheader: "Poppins Bold", sans-serif;
+    --font-subheader: "Poppins", sans-serif;
 }
 
 /* Font Styles */
@@ -32,7 +32,8 @@ body {
 
 .subheader {
     font-family: var(--font-subheader);
-    /* font-weight: 700; */
+    font-weight: 700;
+    color: var(--color-primary);
 }
 
 /* Text Colors */
@@ -116,10 +117,6 @@ body {
 
 .hoverlist>*>a {
     @apply flex items-center p-2;
-}
-
-.highlight {
-    @apply !bg-indigo-100;
 }
 
 .nav-items>li>a {
