@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GuestAuthController;
 use App\Http\Controllers\GuestRegisterController;
 use App\Http\Controllers\LoginController;
 use App\View\Components\GuestLayout;
@@ -23,17 +24,27 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//Jetstream Login for Employees
+
+// Laravel Jetstream Default Authentication for Employees
 Route::get('/', [LoginController::class, 'index'])->name('welcome'); 
+Route::get('/login', function () { return view('auth.login'); })->name('login');
+Route::get('/register', function () { return view('auth.register'); })->name('register');
 
-//Guests
-Route::group(['prefix' => 'guest'], function(){
-    Route::get('/register', function(){
-        return view('auth.guests.guest-register');
-    })->name('auth.guests.register');
+//Guests with specified blades
+    //Guest Login - return login blade
+    Route::get('guest/login', [GuestAuthController::class, 'showLoginForm'])->name('guest.login');
+    //Post method for guest login submit
+    Route::post('guest/login', [GuestAuthController::class, 'login']); 
 
-    Route::get('/login', function(){
-        return view('auth.guests.guest-login');
-    })->name('auth.guests.login');
-});
+    // Guest register - return register blade
+    Route::get('guest/register', [GuestAuthController::class, 'showRegisterForm'])->name('guest.register');
+    //Post method for guest register submit
+    Route::post('guest/register', [GuestAuthController::class, 'register']);
+    //Middleware
+    Route::middleware('auth:guest')->group(function (){
+        Route::get('/guest/dashboard', fn () => view('auth.guests.guest-dashboard'))->name('guest.dashboard'); 
+        //For logging out
+        Route::post('/guest/logout', [GuestAuthController::class, 'logout'])->name('guest.logout');
+    });
+
 

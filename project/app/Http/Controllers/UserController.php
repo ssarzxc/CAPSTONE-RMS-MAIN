@@ -12,11 +12,10 @@ class UserController extends Controller
     {
         $results = User::with('role')->get();
 
-foreach ($results as $user) {
-    echo $user->first_name . ' - ' . ($user->role ? $user->role->role_name : 'No Role') . "<br>";
-}
+        foreach ($results as $user) {
+            echo $user->first_name . ' - ' . ($user->role ? $user->role->role_name : 'No Role') . "<br>";
+        }
 
-dd($results->toArray());
-        
+        dd($results->toArray());
     }
 }

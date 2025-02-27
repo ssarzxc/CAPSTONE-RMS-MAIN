@@ -32,9 +32,25 @@ class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        //for employees register and login
+        Fortify::createUsersUsing(CreateNewUser::class); 
 
-        Fortify::createUsersUsing(CreateNewUser::class); //for employees
-        // Fortify::createUsersUsing(CreateNewGuest::class); //for guests sign in and login
+        Fortify::registerView(fn () => view('auth.guests.guest-register'));
+        Fortify::loginView(fn () => view('auth.guests.guest-login'));
+
+        //for guests registration
+        Fortify::createUsersUsing(CreateNewGuest::class); 
+
+        //for guests login
+        Fortify::authenticateUsing(function (Request $request){
+            $guest = Guest::where('email', $request->email)->first();
+
+            if ($guest && Hash::check($request->password, $guest->password)){
+                return $guest;
+            }
+
+        });
+
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
         Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
