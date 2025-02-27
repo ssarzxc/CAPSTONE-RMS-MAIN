@@ -24,8 +24,8 @@
             </div>
 
             <!-- Table -->
-            <div class="bg-white p-4 rounded-lg shadow-md overflow-x-auto">
-                <table class="w-full border-collapse border border-gray-300">
+            <div class="bg-white p-4 rounded-lg shadow-md overflow-x-auto border">
+                <table class="w-full">
                     <thead class="bg-gray-200">
                         <tr>
                             <th class="p-2 border text-center">Room ID</th>

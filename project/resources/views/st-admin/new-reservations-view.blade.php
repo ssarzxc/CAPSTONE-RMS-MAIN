@@ -24,7 +24,7 @@
             </div>
 
             <!-- Tabs -->
-            <div class="border-b mb-4">
+            {{-- <div class="border-b mb-4">
                 <nav class="flex items-center justify-between">
                     <a href="" class="text-primary font-bold py-2 border-b-2 border-green-700">New Bookings</a>
                     <a href=""
@@ -34,14 +34,14 @@
                     </a>
                     {{-- <a href="" class="text-gray-500 hover:text-green-700 py-2">Confirmed Bookings</a>
             <a href="" class="text-gray-500 hover:text-green-700 py-2">On-Going Bookings</a>
-            <a href="" class="text-gray-500 hover:text-green-700 py-2">Old Bookings</a> --}}
+            <a href="" class="text-gray-500 hover:text-green-700 py-2">Old Bookings</a>
                 </nav>
-            </div>
+            </div> --}}
 
             <!-- Table -->
             {{-- TODO: make select all checkboxes work --}}
-            <div class="overflow-x-auto bg-white rounded-lg">
-                <table class="w-full text-md text-left border">
+            <div class="bg-white p-4 rounded-lg shadow-md overflow-x-auto border">
+                <table class="w-full text-md text-left">
                     <thead class="bg-gray-200">
                         <tr>
                             {{-- <th class="p-2"><input type="checkbox" id="selectAll"
@@ -128,6 +128,8 @@
                     </tbody>
                 </table>
             </div>
+
+
 
             <!-- Pagination -->
             <div class="mt-4 text-right text-sm">
