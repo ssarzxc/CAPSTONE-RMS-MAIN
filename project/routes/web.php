@@ -20,3 +20,11 @@ Route::middleware([
 // Admin Pages 
 
 Route::get('/reservations', [ReservationController::class, 'index'])->name('reservations');
+
+Route::get('/rooms', function () {
+    return view('st-admin.rooms');
+})->name('rooms');
+
+Route::get('/settings', function () {
+    return view('st-admin.settings');
+})->name('settings');
