@@ -34,3 +34,18 @@ Route::get('/rooms', function () {
 Route::get('/settings', function () {
     return view('st-admin.settings');
 })->name('settings');
+
+
+// Settings
+Route::get('/settings/add-user', function () {
+    return ("GRAHHH");
+})->name('add-user');
+
+
+Route::get('/settings/edit-user', function () {
+    return ("GRAHHH");
+})->name('edit-user');   
+
+Route::get('/settings/add-role', function () {
+    return ("GRAHHH");
+})->name('add-role');   
